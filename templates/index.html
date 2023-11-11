@@ -12,6 +12,9 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous">
 </script>
+
+<script src="/js/sum.js" type="application/javascript"></script>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -43,12 +46,12 @@
             <h5 class="card-title">Стоимость дежурства</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
             <div class="mb-3">
-                <label for="salary" class="form-label">Основная ставка</label>
-                <input class="form-control" id="salary" placeholder="0">
+                <label for="salary" class="form-label" id="id_for_salary">Основная ставка</label>
+                <input class="form-control" id="salary" placeholder="0" required>
             </div>
             <div class="mb-3">
                 <label for="hours" class="form-label">Рабочие часы</label>
-                <input class="form-control" id="hours" placeholder="0">
+                <input class="form-control" id="hours" placeholder="0" required>
             </div>
             <div class="mb-3">
                 <label for="bonus" class="form-label">Премия</label>
@@ -68,18 +71,21 @@
             </div>
             <div class="mb-3">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="duty_16" checked>
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" value="16.5" id="duty_16" checked>
                     <label class="form-check-label" for="duty_16">16 часов</label>
                 </div>
                 <div class="form-check mb-3">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="duty_24">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" value="24" id="duty_24">
                     <label class="form-check-label" for="duty_24">24 часа</label>
                 </div>
             </div>
-            <a href="#" class="btn btn-primary">Button</a>
+            <div>
+                <a onclick="calc_duty();" type="submit" class="btn btn-primary">Button</a>
+                <label class="label" id="result">Результат</label>
+            </div>
         </div>
     </div>
-
 </div>
+
 </body>
 </html>
