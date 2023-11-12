@@ -86,8 +86,14 @@
                             </div>
                         </div>
                         <div>
-                            <a onclick="calc_duty();" type="submit" class="btn btn-primary">Button</a>
-                            <label class="label" id="result"></label>
+                            <div class="row">
+                                <div class="col">
+                                    <a onclick="calc_duty();" type="submit" class="btn btn-primary">Button</a>
+                                </div>
+                                <div class="col">
+                                    <label class="label" id="result"></label>
+                                </div>                                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -97,7 +103,7 @@
                     <div class="card-header">
                         История
                     </div>
-                    <ul class="list-group list-group-flush">
+                    <ul class="list-group list-group-flush" id="ul-id">
                         <li class="list-group-item">An item</li>
                         <li class="list-group-item">A second item</li>
                         <li class="list-group-item">A third item</li>

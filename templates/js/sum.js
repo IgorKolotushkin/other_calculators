@@ -20,4 +20,16 @@ function calc_duty() {
     alert('Результат: ' + result.toFixed(1));
 
     document.getElementById('result').innerHTML = 'Результат: ' + result.toFixed(1);
-};
+
+    const para = document.createElement("li");
+    para.className = "list-group-item";
+    const node = document.createTextNode(result.toFixed(1));
+    para.appendChild(node);
+
+    const element = document.getElementById("ul-id");
+    element.appendChild(para);
+    
+    let d = new Date();
+
+    alert( d.toISOString() )
+    };
