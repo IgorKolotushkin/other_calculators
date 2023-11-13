@@ -4,7 +4,7 @@ function add_elem(result) {
     const para = document.createElement("li");
     para.className = "list-group-item";
     let d = new Date();
-    const node = document.createTextNode('Дата: ' + d + `Результат: ${result.toFixed(1)}`);
+    const node = document.createTextNode('Дата: ' + d + `\nРезультат: ${result.toFixed(1)}`);
     para.appendChild(node);
 
     const element = document.getElementById("ul-id");
