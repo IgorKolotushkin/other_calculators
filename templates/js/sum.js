@@ -1,10 +1,10 @@
 function add_elem(result) {
-    document.getElementById('result').innerHTML = 'Результат: ' + result.toFixed(1);
+    document.getElementById('result').innerHTML = `Результат: ${result.toFixed(1)}`;
 
     const para = document.createElement("li");
     para.className = "list-group-item";
     let d = new Date();
-    const node = document.createTextNode('Дата: ' + d + ' Результат: ' + result.toFixed(1));
+    const node = document.createTextNode('Дата: ' + d + `Результат: ${result.toFixed(1)}`);
     para.appendChild(node);
 
     const element = document.getElementById("ul-id");
