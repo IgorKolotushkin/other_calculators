@@ -1,560 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-  </head>
 
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
 
-    <script src="/js/sum.js" type="application/javascript"></script>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-        </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-sm-10 mb-3 mb-sm-0">
-          <div class="card w-100">
-            <h5 class="card-header">Шкала Каприни</h5>
-            <div class="card-body">
-              <div class="mb-3">
-                <div class="form-check form-check-inline">
-                  <h4>Факторы, связанные с пациентом:</h4>
-                  <strong>Возраст:</strong>
-                  <div class="mb-3" id="age">
-                    <div class="form-check form-check-inline">
-                        <label class="age si si-radio" for="a0">До 41 года, (+0)</label>
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="age"
-                              value="0"
-                              onclick="reCalculate();"
-                              id="a0"
-                            />
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="age si si-radio" for="a1">41-60 лет (+1)</label>
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="age"
-                              value="1"
-                              onclick="reCalculate();"
-                              id="a1"
-                            />                          
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="age si si-radio" for="a2">61-74 лет, (+2)</label>
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="age"
-                              value="2"
-                              onclick="reCalculate();"
-                              id="a2"
-                            />
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <label class="age si si-radio" for="a3">75 лет и более, (+3)</label>
-                            <input
-                              class="form-check-input"
-                              type="radio"
-                              name="age"
-                              value="3"
-                              onclick="reCalculate();"
-                              id="a3"
-                            />    
-                    </div>
-                </div>
-                  <strong style="margin: 10px 0; display: block">Масса тела и рост:</strong>
-                  <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Вес" aria-label="Username">
-                    <span class="input-group-text">|</span>
-                    <input type="text" class="form-control" placeholder="Рост" aria-label="Server">
-                    <span class="input-group-text">ИМТ</span>
-                    <span class="input-group-text">00.0</span>
-                    <span class="input-group-text">кг/м2</span>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-sm-10 mb-3 mb-sm-0">
+        <div class="card w-100">
+          <h5 class="card-header">Шкала Каприни</h5>
+          <div class="card-body">
+            <div class="mb-3">
+              <div class="form-check form-check-inline">
+                <h4>Факторы, связанные с пациентом:</h4>
+                <strong>Возраст:</strong>
+                <div class="mb-3" id="age">
+                  <div class="form-check form-check-inline">
+                    <label class="age si si-radio" for="a0">До 41 года, (+0)</label>
+                    <input class="form-check-input" type="radio" name="age" value="0" onclick="reCalculate();"
+                      id="a0" />
                   </div>
-                
-                  <div id="__factors">
-                    <h4>Факторы, связанные с состоянием организма человека:</h4>
-                    <div id="factors">
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f0">Отеки нижних конечностей (в данный момент), (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f0"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f1">Варикозные вены, (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f1"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f2">Ожирение (индекс массы тела &gt; 25 кг/м2), (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f2"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f3">Сепсис (&lt;1 мес), (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f3"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f4">яжелое заболевание легких (в т.ч. пневмония &lt; 1мес.), (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f4"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f5">Прием оральных контрацептивов,гормонозаместительная терапия, (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f5"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f6">Беременность или послеродовый период (&lt;1мес), (+1)</label>
-                          ><input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f6"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f7">В анамнезе: необъяснимые мертворождения, повторный
-                            самопроизвольный аборт (3 и более раз), рождение
-                            ребенка с токсинемией, ребенок с задержкой
-                            роста, (+1)</label>
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f7"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f8">Острый инфаркт миокарда, (+1)</label>
-                          ><input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="factor"
-                            value="1"
-                            onclick="reCalculate();"
-                            id="f8"
-                          />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f9">Хроническая сердечная недостаточность (сейчас или
-                            &lt; 1 мес.), (+1)</label>
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="1"
-                          onclick="reCalculate();"
-                          id="f9"
-                        />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f10">Пациент находится на постельном режиме, (+1)</label>
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="1"
-                          onclick="reCalculate();"
-                          id="f10"
-                        />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f11">Постельный режим более 72 часов, (+2)</label>
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="2"
-                          onclick="reCalculate();"
-                          id="f11"
-                        />
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f12"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="1"
-                          onclick="reCalculate();"
-                          id="f12"
-                        /><span class="label si-label"
-                          >Воспалительное заболевание толстой кишки в
-                          анамнезе<span>, (+1)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f13"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="2"
-                          onclick="reCalculate();"
-                          id="f13"
-                        /><span class="label si-label"
-                          >Большая хирургия в анамнезе (&lt;1 мес)<span
-                            >, (+2)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f14"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="1"
-                          onclick="reCalculate();"
-                          id="f14"
-                        /><span class="label si-label"
-                          >Нарушение функции легких (ХОБЛ)<span
-                            >, (+1)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                      <label class="factor si si-checkbox" for="f15"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="2"
-                          onclick="reCalculate();"
-                          id="f15"
-                        /><span class="label si-label"
-                          >Злокачественное новообразование (в настоящее время
-                          или ранее)<span>, (+2)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f16"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="2"
-                          onclick="reCalculate();"
-                          id="f16"
-                        /><span class="label si-label"
-                          >Иммобилизация конечности (&lt; 1 мес)<span
-                            >, (+2)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f17"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f17"
-                        /><span class="label si-label"
-                          >Личный анамнез ВТЭО (ТГВ/ТЭЛА)<span
-                            >, (+3)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
+                  <div class="form-check form-check-inline">
+                    <label class="age si si-radio" for="a1">41-60 лет (+1)</label>
+                    <input class="form-check-input" type="radio" name="age" value="1" onclick="reCalculate();"
+                      id="a1" />
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="age si si-radio" for="a2">61-74 лет, (+2)</label>
+                    <input class="form-check-input" type="radio" name="age" value="2" onclick="reCalculate();"
+                      id="a2" />
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <label class="age si si-radio" for="a3">75 лет и более, (+3)</label>
+                    <input class="form-check-input" type="radio" name="age" value="3" onclick="reCalculate();"
+                      id="a3" />
+                  </div>
+                </div>
+                <strong style="margin: 10px 0; display: block">Масса тела и рост:</strong>
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Вес" aria-label="Username">
+                  <span class="input-group-text">|</span>
+                  <input type="text" class="form-control" placeholder="Рост" aria-label="Server">
+                  <span class="input-group-text">ИМТ</span>
+                  <span class="input-group-text">00.0</span>
+                  <span class="input-group-text">кг/м2</span>
+                </div>
 
-                      <label class="factor si si-checkbox" for="f18"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f18"
-                        /><span class="label si-label"
-                          >Мутация фактора V (Лейден)<span>, (+3)</span></span
-                        ></label
-                      >                        
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f19"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f19"
-                        /><span class="label si-label"
-                          >Мутация протромбина 20210A<span>, (+3)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f20"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f20"
-                        /><span class="label si-label"
-                          >Положительный тест на волчаночный антикоагулянт<span
-                            >, (+3)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f21"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f21"
-                        /><span class="label si-label"
-                          >Семейный анамнез ВТЭО<span>, (+3)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f22"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f22"
-                        /><span class="label si-label"
-                          >Гипергомоцистеинемия<span>, (+3)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f23"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f23"
-                        /><span class="label si-label"
-                          >Гепарин-индуцированная тромбоцитопения
-                          <span>, (+3)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f24"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f24"
-                        /><span class="label si-label"
-                          >Повышенный уровень антител к кардиолипину<span
-                            >, (+3)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f25"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="3"
-                          onclick="reCalculate();"
-                          id="f25"
-                        /><span class="label si-label"
-                          >Другая наследственная или приобретенная
-                          тромбофилия<span>, (+3)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f26"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="5"
-                          onclick="reCalculate();"
-                          id="f26"
-                        /><span class="label si-label"
-                          >Инсульт (&lt; 1 мес)<span>, (+5)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f27"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="5"
-                          onclick="reCalculate();"
-                          id="f27"
-                        /><span class="label si-label"
-                          >Повреждение спинного мозга с параличом (&lt; 1
-                          мес)<span>, (+5)</span></span
-                        ></label
-                      >
-                      </div>
-                      <div class="form-check">
-                        <label class="factor si si-checkbox" for="f28"
-                        ><input
-                          class="form-check-input"
-                          type="checkbox"
-                          name="factor"
-                          value="1"
-                          onclick="reCalculate();"
-                          id="f28"
-                        /><span class="label si-label"
-                          >Какой-либо дополнительный фактор риска<span
-                            >, (+1)</span
-                          ></span
-                        ></label
-                      >
-                      </div>
+                <div id="__factors">
+                  <h4>Факторы, связанные с состоянием организма человека:</h4>
+                  <div id="factors">
+                    <div class="form-check">
+                      <label for="f0">Отеки нижних конечностей (в данный момент), (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f0" />
                     </div>
-                    <div>
-                        <div id="__surgery">
-                            <h4>Факторы риска, связанные с травмой или с оперативным вмешательством:</h4>
-                            <div id="surgery">
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s0">Катетеризация центральных вен(+2)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="2" onclick="reCalculate();" id="s0">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s1">Малое хирургическое вмешательство, (+1)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="1" onclick="reCalculate();" id="s1">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s2">Артроскопическая операция, (+2)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="2" onclick="reCalculate();" id="s2">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s3">Лапароскопическая операция (&gt; 60 мин), (+2)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="2" onclick="reCalculate();" id="s3">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s4">Большое хирургическое вмешательство (&gt; 45 мин), (+2)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="2" onclick="reCalculate();" id="s4">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s5">Множественные травмы (&lt;1 мес), (+5)</label>
-                                    <input class="form-check-input" class="form-check-input" type="checkbox" name="surgery" value="5" onclick="reCalculate();" id="s5">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s6">Эндопротезирование крупных суставов, (+5)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="5" onclick="reCalculate();" id="s6">
-                                </div>
-                                <div class="form-check">
-                                    <label class="surgery si si-checkbox" for="s7">Перелом костей конечности или таза, (+5)</label>
-                                    <input class="form-check-input" type="checkbox" name="surgery" value="5" onclick="reCalculate();" id="s7">
-                                </div>
-                            </div>
+                    <div class="form-check">
+                      <label for="f1">Варикозные вены, (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f1" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f2">Ожирение (индекс массы тела &gt; 25 кг/м2),
+                        (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f2" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f3">Сепсис (&lt;1 мес), (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f3" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f4">Тяжелое заболевание легких (в т.ч. пневмония &lt;1мес.), (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f4" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f5">Прием оральных контрацептивов,гормонозаместительная
+                        терапия, (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f5" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f6">Беременность или послеродовый период (&lt;1мес),
+                        (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f6" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f7">В анамнезе: необъяснимые мертворождения, повторный
+                        самопроизвольный аборт (3 и более раз), рождение
+                        ребенка с токсинемией, ребенок с задержкой
+                        роста, (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f7" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f8">Острый инфаркт миокарда, (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f8" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f9">Хроническая сердечная недостаточность (сейчас или
+                        &lt; 1 мес.), (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f9" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f10">Пациент находится на постельном режиме,
+                        (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f10" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f11">Постельный режим более 72 часов, (+2)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="2" onclick="reCalculate();"
+                        id="f11" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f12">Воспалительное заболевание толстой кишки в
+                        анамнезе, (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f12" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f13">Большая хирургия в анамнезе (&lt;1 мес), (+2)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="2" onclick="reCalculate();"
+                        id="f13" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f14">Нарушение функции легких (ХОБЛ), (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f14" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f15">Злокачественное новообразование (в настоящее время
+                        или ранее), (+2)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="2" onclick="reCalculate();"
+                        id="f15" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f16">Иммобилизация конечности (&lt; 1 мес), (+2)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="2" onclick="reCalculate();"
+                        id="f16" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f17">Иммобилизация конечности (&lt; 1 мес), (+2)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f17" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f18">Мутация фактора V (Лейден), (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f18" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f19">Мутация протромбина 20210A, (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f19" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f20">Положительный тест на волчаночный антикоагулянт,
+                        (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f20" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f21">Семейный анамнез ВТЭО, (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f21" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f22">Гипергомоцистеинемия, (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f22" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f23">Гепарин-индуцированная тромбоцитопения, (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f23" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f24">Повышенный уровень антител к кардиолипину, (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f24" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f25">Другая наследственная или приобретеннаяvтромбофилия, (+3)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="3" onclick="reCalculate();"
+                        id="f25" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f26">Инсульт (&lt; 1 мес), (+5)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="5" onclick="reCalculate();"
+                        id="f26" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f27">Повреждение спинного мозга с параличом (&lt; 1мес), (+5)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="5" onclick="reCalculate();"
+                        id="f27" />
+                    </div>
+                    <div class="form-check">
+                      <label for="f28">Какой-либо дополнительный фактор риска, (+1)</label>
+                      <input class="form-check-input" type="checkbox" name="factor" value="1" onclick="reCalculate();"
+                        id="f28" />
+                    </div>
+                  </div>
+                  <div>
+                    <div id="__surgery">
+                      <h4>Факторы риска, связанные с травмой или с оперативным вмешательством:</h4>
+                      <div id="surgery">
+                        <div class="form-check">
+                          <label for="s0">Катетеризация центральных вен(+2)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="2"
+                            onclick="reCalculate();" id="s0">
                         </div>
+                        <div class="form-check">
+                          <label for="s1">Малое хирургическое вмешательство, (+1)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="1"
+                            onclick="reCalculate();" id="s1">
+                        </div>
+                        <div class="form-check">
+                          <label for="s2">Артроскопическая операция, (+2)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="2"
+                            onclick="reCalculate();" id="s2">
+                        </div>
+                        <div class="form-check">
+                          <label for="s3">Лапароскопическая операция (&gt; 60 мин), (+2)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="2"
+                            onclick="reCalculate();" id="s3">
+                        </div>
+                        <div class="form-check">
+                          <label for="s4">Большое хирургическое вмешательство (&gt; 45 мин), (+2)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="2"
+                            onclick="reCalculate();" id="s4">
+                        </div>
+                        <div class="form-check">
+                          <label for="s5">Множественные травмы (&lt;1 мес), (+5)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery"
+                            value="5" onclick="reCalculate();" id="s5">
+                        </div>
+                        <div class="form-check">
+                          <label for="s6">Эндопротезирование крупных суставов, (+5)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="5"
+                            onclick="reCalculate();" id="s6">
+                        </div>
+                        <div class="form-check">
+                          <label for="s7">Перелом костей конечности или таза, (+5)</label>
+                          <input class="form-check-input" type="checkbox" name="surgery" value="5"
+                            onclick="reCalculate();" id="s7">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -564,5 +295,7 @@
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
