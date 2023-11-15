@@ -37,14 +37,21 @@ function setRisk(level) {
 function theReset() {
     document.getElementById('__body_weight').value = ''
     document.getElementById('__body_height').value = ''
-    var ageButton = document.getElementsByName('age')
-    for (var i = 0; i < ageButton.length; i++) ageButton[i].checked = false
-    var factorButton = document.getElementsByName('factor')
-    for (var i = 0; i < factorButton.length; i++) factorButton[i].checked = false
-    var surgeryButton = document.getElementsByName('surgery')
-    for (var i = 0; i < surgeryButton.length; i++) surgeryButton[i].checked = false
+    const ageButton = document.getElementsByName('age')
+    for (let i = 0; i < ageButton.length; i++) {
+        ageButton[i].checked = false
+    }
+    const factorButton = document.getElementsByName('factor')
+    for (let i = 0; i < factorButton.length; i++) {
+        factorButton[i].checked = false
+    }
+    const surgeryButton = document.getElementsByName('surgery')
+    for (let i = 0; i < surgeryButton.length; i++) {
+        surgeryButton[i].checked = false
+    }
     reCalculate()
 }
+
 // scores
 var patientScore = 0
 var surgeryScore = 0
@@ -61,7 +68,7 @@ function reCalculate() {
     if (bodyWeight != '' && bodyHeight != '') {
         document.getElementById('__imt').innerHTML = imt.toFixed(2)
     } else {
-        document.getElementById('__imt').innerHTML = '__'
+        document.getElementById('__imt').innerHTML = '00.0'
     }
 
     if (bodyWeight != '' && bodyHeight != '' && imt >= 25) {
@@ -94,19 +101,19 @@ function reCalculate() {
     patientScore = ageScore + factorScore
     // total
     totalScore = patientScore + surgeryScore
-    document.getElementById('total_risk').innerHTML = totalScore
-    document.getElementById('patient_risk').innerHTML = patientScore
-    document.getElementById('surgery_risk').innerHTML = surgeryScore
-    if (totalScore < 1) {
-        setRisk(0);
-    }
-    if (totalScore == 2) {
-        setRisk(1);
-    }
-    if (totalScore >= 3 && totalScore <= 4) {
-        setRisk(2);
-    }
-    if (totalScore >= 5) {
-        setRisk(3);
-    }
+    // document.getElementById('total_risk').innerHTML = totalScore
+    // document.getElementById('patient_risk').innerHTML = patientScore
+    // document.getElementById('surgery_risk').innerHTML = surgeryScore
+    // if (totalScore < 1) {
+    //     setRisk(0);
+    // }
+    // if (totalScore == 2) {
+    //     setRisk(1);
+    // }
+    // if (totalScore >= 3 && totalScore <= 4) {
+    //     setRisk(2);
+    // }
+    // if (totalScore >= 5) {
+    //     setRisk(3);
+    // }
 } 
