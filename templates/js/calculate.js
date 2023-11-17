@@ -104,16 +104,16 @@ function reCalculate() {
     // document.getElementById('total_risk').innerHTML = totalScore
     // document.getElementById('patient_risk').innerHTML = patientScore
     // document.getElementById('surgery_risk').innerHTML = surgeryScore
-    // if (totalScore < 1) {
-    //     setRisk(0);
-    // }
-    // if (totalScore == 2) {
-    //     setRisk(1);
-    // }
-    // if (totalScore >= 3 && totalScore <= 4) {
-    //     setRisk(2);
-    // }
-    // if (totalScore >= 5) {
-    //     setRisk(3);
-    // }
+    if (totalScore <= 1) {
+        setRisk(0);
+    }
+    if (totalScore == 2) {
+        setRisk(1);
+    }
+    if (totalScore >= 3 && totalScore <= 4) {
+        setRisk(2);
+    }
+    if (totalScore >= 5) {
+        setRisk(3);
+    }
 } 
