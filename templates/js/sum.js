@@ -35,3 +35,12 @@ function calc_duty() {
 
     add_elem(result)
     };
+
+function clearLabel() {
+    const dutyLabel = document.getElementsByName('duty')
+    for (let i = 0; i < dutyLabel.length; i++) {
+        dutyLabel[i].value = ''
+    }
+    document.getElementById('duty_16').checked = true
+    document.getElementById('result').innerHTML = ''
+}
