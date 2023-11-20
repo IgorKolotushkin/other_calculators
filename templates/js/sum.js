@@ -1,4 +1,4 @@
-function add_elem(result) {
+function addElem(result) {
     document.getElementById('result').innerHTML = `Результат: ${result.toFixed(1)}`;
 
     const para = document.createElement("li");
@@ -11,7 +11,7 @@ function add_elem(result) {
     element.appendChild(para);
 }
 
-function calc_duty() {
+function calcDuty() {
     const hours = +document.getElementById('hours').value;
     const salary = +document.getElementById('salary').value;
     const bonus = +document.getElementById('bonus').value / hours;
@@ -33,14 +33,14 @@ function calc_duty() {
     
     alert('Результат: ' + result.toFixed(1));
 
-    add_elem(result)
+    addElem(result)
     };
 
 function clearLabel() {
-    const dutyLabel = document.getElementsByName('duty')
+    const dutyLabel = document.getElementsByName('duty');
     for (let i = 0; i < dutyLabel.length; i++) {
         dutyLabel[i].value = ''
     }
-    document.getElementById('duty_16').checked = true
-    document.getElementById('result').innerHTML = ''
+    document.getElementById('duty_16').checked = true;
+    document.getElementById('result').innerHTML = '';
 }
