@@ -43,16 +43,31 @@ function getExamConsultation(educ_hours) {
     }
 }
 
+function getExam(listeners) {
+    const exam = document.getElementById('flexCheckExam').value
+    if (exam === 'yes') {
+        return 0.5 * listeners
+    }
+    else {
+        return 0
+    }
+}
+    
+
 function calculationHours() {
     const listeners = +document.getElementById('listeners').value;
     const educ_hours = +document.querySelector('.form-check-input:checked').value;
     const current_consult = listeners * 0.5
     const attest = listeners * 0.5
+    let examConsultation = getExamConsultation(educ_hours)
     let humanHours = educ_hours * listeners
+    let controlWork = getControlWork(educ_hours, listeners)
+    let curation = getCuration(educ_hours)
+    let exam_hours = getExam(listeners)
     // let g = getControlWork(educ_hours, listeners)
     // let c = getCuration(educ_hours)
     // let e = getExamConsultation(educ_hours)
-    let educationJob = getControlWork(educ_hours, listeners) + getCuration(educ_hours) + current_consult + getExamConsultation(educ_hours) + attest
+    let educationJob = controlWork + curation + current_consult + examConsultation + attest
     let result = humanHours + educationJob
 
 }
