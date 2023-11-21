@@ -16,6 +16,7 @@
 
     <script src="/js/sum.js" type="application/javascript"></script>
     <script src="/js/calculate.js" type="application/javascript"></script>
+    <script src="/js/calcEducation.js" type="application/javascript"></script>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -458,7 +459,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="certificate" class="col-sm-5 col-form-label">Длительность цикла:</label>
+                                    <label for="certificate" class="col-sm-5 col-form-label">Экзамен:</label>
                                     <div class="col-sm-7" id="certificate">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="flexRadioDefault"
@@ -475,7 +476,7 @@
                                 <div>
                                     <div class="row">
                                         <div class="d-grid d-md-block">
-                                            <button class="btn btn-primary" onclick="" type="button">Рассчитать</button>
+                                            <button class="btn btn-primary" onclick="calculationHours();" type="button">Рассчитать</button>
                                             <button class="btn btn-success" onclick="" type="button">Очистить</button>
                                             <label class="label" id="result"></label>
                                         </div>
