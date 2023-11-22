@@ -16,6 +16,6 @@ jobs:
     # needs: prepare-environment
     steps:
       - name: clone
-        run: git clone https://github.com/IgorKolotushkin/other_calculator.git
+        run: git clone https://github.com/IgorKolotushkin/other_calculators.git
       - name: docker-compose
-        run: cd other_calculator && docker-compose up --build -d
+        run: cd other_calculators && docker-compose up --build -d
