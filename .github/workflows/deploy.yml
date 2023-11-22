@@ -8,7 +8,7 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Stop and remove containers, networks
-        run: cd server_monitoring && docker-compose down
+        run: cd other_calculator && docker-compose down
       - name: Remove unused data
         run: docker system prune -a -f
   deploy:
@@ -16,6 +16,6 @@ jobs:
     needs: prepare-environment
     steps:
       - name: clone
-        run: git clone https://github.com/IgorKolotushkin/server_monitoring.git
+        run: git clone https://github.com/IgorKolotushkin/other_calculator.git
       - name: docker-compose
-        run: cd server_monitoring && docker-compose up --build -d
+        run: cd other_calculator && docker-compose up --build -d
