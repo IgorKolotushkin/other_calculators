@@ -51,12 +51,8 @@ function theReset() {
 }
 
 function reCalculate() {
-    // scores
     let patientScore = 0
-    // let surgeryScore = 0
     let totalScore = 0
-    // body weigth and height
-    // imt
     let bodyWeight = document.getElementById('__body_weight').value
     let bodyHeight = document.getElementById('__body_height').value
     let bodyHeightM = bodyHeight / 100
@@ -73,14 +69,14 @@ function reCalculate() {
     } else {
         document.getElementById('f2').checked = false
     }
-    // age
+
     let ageScore = 0
     let ageButton = document.getElementsByName('age')
     for (let i = 0; i < ageButton.length; i++)
         if (ageButton[i].checked) {
             ageScore += Number(ageButton[i].value)
         }
-    // factors
+
     let factorScore = 0
     let factorButton = document.getElementsByName('factor')
     for (let i = 0; i < factorButton.length; i++)
@@ -88,7 +84,7 @@ function reCalculate() {
             factorScore += Number(factorButton[i].value)
         }
     patientScore = ageScore + factorScore
-    // surgery
+
     let surgeryScore = 0
     let surgeryButton = document.getElementsByName('surgery')
     for (let i = 0; i < surgeryButton.length; i++)
@@ -96,7 +92,7 @@ function reCalculate() {
             surgeryScore += Number(surgeryButton[i].value)
         }
     patientScore = ageScore + factorScore
-    // total
+
     totalScore = patientScore + surgeryScore
 
     if (totalScore <= 1) {
