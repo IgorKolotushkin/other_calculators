@@ -57,15 +57,14 @@ function calculationHours() {
     const listeners = +document.getElementById('listeners').value;
     const educ_hours = +document.querySelector('.form-check-input:checked').value;
     const current_consult = listeners * 0.5;
-    const attest = listeners * 0.5;
     const exam_hours = listeners * 0.5; //это просто экзамен
     let examConsultation = getExamConsultation(educ_hours, listeners);
     let humanHours = educ_hours * listeners;
     let controlWork = getControlWork(educ_hours, listeners);
     let curation = getCuration(educ_hours);
     let qualifExam = getQualificationExam(listeners) // квалификационный экзамен
-    let educationJob = controlWork + curation + current_consult + examConsultation + attest + exam_hours + qualifExam;
-    let result = humanHours + educationJob;
+    let educationJob = controlWork + curation + current_consult + examConsultation + exam_hours + qualifExam;
+    let result = educ_hours + educationJob;
     setInfo(educ_hours, result, humanHours);
 }
 
