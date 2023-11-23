@@ -34,44 +34,64 @@ function getControlWork(educ_hours, listeners) {
     }
 }
 
-function getExamConsultation(educ_hours) {
+function getExamConsultation(educ_hours, listeners) {
     if (educ_hours >= 144) {
-        return listeners * 0.5
-    }
-    else {
-        return 0
-    }
-}
-
-function getExam(listeners) {
-    const exam = document.getElementById('flexCheckExam').value
-    if (exam === 'yes') {
         return 0.5 * listeners
     }
     else {
         return 0
     }
 }
-    
+
+function getQualificationExam(listeners) {
+    const exam = document.getElementById('flexCheckExam').checked
+    if (exam === true) {
+        return 0.5 * listeners
+    }
+    else {
+        return 0
+    }
+}
 
 function calculationHours() {
     const listeners = +document.getElementById('listeners').value;
     const educ_hours = +document.querySelector('.form-check-input:checked').value;
-    const current_consult = listeners * 0.5
-    const attest = listeners * 0.5
-    let examConsultation = getExamConsultation(educ_hours)
-    let humanHours = educ_hours * listeners
-    let controlWork = getControlWork(educ_hours, listeners)
-    let curation = getCuration(educ_hours)
-    let exam_hours = getExam(listeners)
-    // let g = getControlWork(educ_hours, listeners)
-    // let c = getCuration(educ_hours)
-    // let e = getExamConsultation(educ_hours)
-    let educationJob = controlWork + curation + current_consult + examConsultation + attest
-    let result = humanHours + educationJob
-
+    const current_consult = listeners * 0.5;
+    const attest = listeners * 0.5;
+    const exam_hours = listeners * 0.5; //это просто экзамен
+    let examConsultation = getExamConsultation(educ_hours, listeners);
+    let humanHours = educ_hours * listeners;
+    let controlWork = getControlWork(educ_hours, listeners);
+    let curation = getCuration(educ_hours);
+    let qualifExam = getQualificationExam(listeners) // квалификационный экзамен
+    let educationJob = controlWork + curation + current_consult + examConsultation + attest + exam_hours + qualifExam;
+    let result = humanHours + educationJob;
+    setInfo(educ_hours, result, humanHours);
 }
 
-function setInfo() {
+function setInfo(educ_hours, result, humanHours) {
+    document.getElementById('hours_education').innerHTML = `Продолжительность обучения в часах: ${educ_hours}`;
+    document.getElementById('all_hours').innerHTML = `Часов всего: ${result}`;
+    document.getElementById('human_hours').innerHTML = `Число человеко-часов: ${humanHours}`;
+    addElemToHistory(educ_hours, result, humanHours)
+}
 
+function clearInfo() {
+    document.getElementById('listeners').value = ''
+    document.getElementById('hours_36').checked = true;
+    document.getElementById('flexCheckExam').checked = false;
+    document.getElementById('hours_education').innerHTML = '';
+    document.getElementById('all_hours').innerHTML = '';
+    document.getElementById('human_hours').innerHTML = '';
+}
+
+function addElemToHistory(educ_hours, result, humanHours) {
+    const para = document.createElement("li");
+    para.className = "list-group-item";
+    let d = new Date();
+    const node = document.createTextNode(`Продолжительность обучения в часах: ${educ_hours} Часов всего: ${result} Число человеко-часов: ${humanHours}`);
+    para.appendChild(node);
+
+    const element = document.getElementById("ul-id-edu");
+    element.appendChild(para);
 }

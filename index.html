@@ -459,10 +459,10 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="certificate" class="col-sm-5 col-form-label">Экзамен:</label>
+                                    <label for="certificate" class="col-sm-5 col-form-label">Квалификационный экзамен:</label>
                                     <div class="col-sm-7" id="certificate">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="yes"
+                                            <input class="form-check-input" type="checkbox"
                                                 id="flexCheckExam">
                                             <label class="form-check-label" for="flexCheckExam">да</label>
                                         </div>
@@ -473,10 +473,22 @@
                                         <div class="d-grid d-md-block">
                                             <button class="btn btn-primary" onclick="calculationHours();"
                                                 type="button">Рассчитать</button>
-                                            <button class="btn btn-success" onclick="" type="button">Очистить</button>
-                                            <label class="label" id="result"></label>
+                                            <button class="btn btn-success" onclick="clearInfo();" type="button">Очистить</button>
+                                            <!-- <label class="label" id="result"></label> -->
                                         </div>
                                     </div>
+                                </div>
+                                <br>
+                                <div class="row card card-outline-success m-x-auto m-b-2">
+                                    <div class="col-md-12 text-xs-center p-y-1">
+                                        <h4 id="level-risk">Отчет:</h4>
+                                    </div>
+                                    <div class="col-md-12 text-xs-center p-y-1">
+                                        <h6 id="hours_education">...</h6>
+                                        <h6 id="all_hours"></h6>
+                                        <h6 id="human_hours"></h6>
+                                    </div>
+                                    <br>
                                 </div>
                             </div>
                         </div>
@@ -486,7 +498,7 @@
                             <div class="card-header">
                                 История
                             </div>
-                            <ul class="list-group list-group-flush" id="ul-id">
+                            <ul class="list-group list-group-flush" id="ul-id-edu">
                                 <li class="list-group-item"></li>
                             </ul>
                         </div>
