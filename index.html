@@ -68,6 +68,24 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
+                                    <label for="vmp" class="col-sm-6 col-form-label">Надбавка за категорию</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="number" id="category" name="duty" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="vmp" class="col-sm-6 col-form-label">Доплата за интенсивность</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="number" id="intensity" name="duty" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="vmp" class="col-sm-6 col-form-label">Надбавка за ученую степень</label>
+                                    <div class="col-sm-5">
+                                        <input class="form-control" type="number" id="academic_degree" name="duty" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
                                     <label for="sum_night" class="col-sm-6 col-form-label">Общая сумма ночных</label>
                                     <div class="col-sm-5">
                                         <input class="form-control" type="number" id="sum_night" name="duty"
@@ -459,11 +477,11 @@
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
-                                    <label for="certificate" class="col-sm-5 col-form-label">Квалификационный экзамен:</label>
+                                    <label for="certificate" class="col-sm-5 col-form-label">Квалификационный
+                                        экзамен:</label>
                                     <div class="col-sm-7" id="certificate">
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox"
-                                                id="flexCheckExam">
+                                            <input class="form-check-input" type="checkbox" id="flexCheckExam">
                                             <label class="form-check-label" for="flexCheckExam">да</label>
                                         </div>
                                     </div>
@@ -473,7 +491,8 @@
                                         <div class="d-grid d-md-block">
                                             <button class="btn btn-primary" onclick="calculationHours();"
                                                 type="button">Рассчитать</button>
-                                            <button class="btn btn-success" onclick="clearInfo();" type="button">Очистить</button>
+                                            <button class="btn btn-success" onclick="clearInfo();"
+                                                type="button">Очистить</button>
                                         </div>
                                     </div>
                                 </div>
