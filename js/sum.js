@@ -18,14 +18,15 @@ function calcDuty() {
     const vmp = +document.getElementById('vmp').value / hours;
     const sum_night = +document.getElementById('sum_night').value;
     const hours_hight = +document.getElementById('hours_night').value;
-    const academic_degree = 3000 / hours;
-    let category = (salary * 0.22) / hours;
+    const academic_degree = +document.getElementById('academic_degree').value / hours;
+    const intensity = +document.getElementById('intensity').value;
+    let category = +document.getElementById('category').value / hours;
     let disutility = (salary * 0.08) / hours;
-    let length_of_service = (salary * 0.1) / hours
+    let length_of_service = (salary * 0.1) / hours;
     
     let hrs_duty = +document.querySelector('.form-check-input:checked').value;
 
-    let all_salary = (((salary * 2) / hours) + bonus + vmp + academic_degree + category + disutility + length_of_service) * hrs_duty;
+    let all_salary = (((salary + intensity) / hours) + bonus + vmp + academic_degree + category + disutility + length_of_service) * hrs_duty;
     let all_night = ((sum_night / hours_hight) * 8);
     
     let all_sum =  all_salary + all_night;
