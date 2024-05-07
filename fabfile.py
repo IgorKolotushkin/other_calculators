@@ -28,6 +28,6 @@ def deploy(ctx):
         with c.cd("/home/user_igor/other_calculators"):
             c.put("arh.tar", "/home/user_igor/other_calculators")
             c.run("tar -xf arh.tar")
-            c.run("docker-compose down")
-            c.run("docker-compose up --build -d")
+            c.run("docker compose down")
+            c.run("docker compose up --build -d")
             c.run("rm arh.tar")
