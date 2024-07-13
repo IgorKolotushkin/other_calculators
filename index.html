@@ -17,6 +17,7 @@
     <script src="/js/sum.js" type="application/javascript"></script>
     <script src="/js/calculate.js" type="application/javascript"></script>
     <script src="/js/calcEducation.js" type="application/javascript"></script>
+    <script src="/js/calcVolume.js" type="application/javascript"></script>
 
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -28,6 +29,9 @@
                     type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Шкала Каприни</button>
                 <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
                     type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Учебная нагрузка</button>
+                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-deposit"
+                    type="button" role="tab" aria-controls="nav-deposit" aria-selected="false">Калькулятор
+                    позиции</button>
             </div>
         </div>
     </nav>
@@ -70,19 +74,22 @@
                                 <div class="mb-3 row">
                                     <label for="vmp" class="col-sm-6 col-form-label">Надбавка за категорию</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="number" id="category" name="duty" placeholder="0">
+                                        <input class="form-control" type="number" id="category" name="duty"
+                                            placeholder="0">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="vmp" class="col-sm-6 col-form-label">Доплата за интенсивность</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="number" id="intensity" name="duty" placeholder="0">
+                                        <input class="form-control" type="number" id="intensity" name="duty"
+                                            placeholder="0">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
                                     <label for="vmp" class="col-sm-6 col-form-label">Надбавка за ученую степень</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" type="number" id="academic_degree" name="duty" placeholder="0">
+                                        <input class="form-control" type="number" id="academic_degree" name="duty"
+                                            placeholder="0">
                                     </div>
                                 </div>
                                 <div class="mb-3 row">
@@ -524,6 +531,106 @@
                 </div>
             </div>
         </div>
+        <div class="tab-pane fade" id="nav-deposit" role="tabpanel" aria-labelledby="nav-contact-tab">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="card w-80">
+                            <h5 class="card-header">Калькулятор позиции</h5>
+                            <div class="card-body">
+                                <div class="mb-3 row">
+                                    <label for="deposit" class="col-sm-5 col-form-label"
+                                        id="id_for_deposit">Депозит:</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" type="number" id="deposit" name="deposit"
+                                            placeholder="0" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="stop" class="col-sm-5 col-form-label" id="id_for_stop">Стоп %:</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" type="number" id="stop" name="stop" placeholder="0"
+                                            required>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="risk" class="col-sm-5 col-form-label">Размер риска %:</label>
+                                    <div class="col-sm-7" id="percent_risk">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                value="1" id="risk_1" checked>
+                                            <label class="form-check-label" for="risk_1">1</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                value="2" id="risk_2">
+                                            <label class="form-check-label" for="risk_2">2</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                value="3" id="risk_3">
+                                            <label class="form-check-label" for="risk_3">3</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-grid d-md-block">
+                                            <button class="btn btn-primary" onclick="calculationVolume();"
+                                                type="button">Рассчитать</button>
+                                            <button class="btn btn-success" onclick="clearVolume();"
+                                                type="button">Очистить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row card card-outline-success m-x-auto m-b-2">
+                                    <div class="col-md-12 text-xs-center p-y-1">
+                                        <h6 id="volume-position">...</h6>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card w-70">
+                            <h5 class="card-header">Калькулятор stop-loss</h5>
+                            <div class="card-body">
+                                <div class="mb-3 row">
+                                    <label for="price-entry" class="col-sm-5 col-form-label" id="id_for_deposit">Цена
+                                        входа:</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" type="number" id="price-entry" name="price-entry"
+                                            placeholder="0" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="price-stop" class="col-sm-5 col-form-label" id="id_for_stop">Цена
+                                        стопа:</label>
+                                    <div class="col-sm-7">
+                                        <input class="form-control" type="number" id="price-stop" name="price-stop"
+                                            placeholder="0" required>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="row">
+                                        <div class="d-grid d-md-block">
+                                            <button class="btn btn-primary" onclick="calculationStopLoss();"
+                                                type="button">Рассчитать</button>
+                                            <button class="btn btn-success" onclick="clearStopLoss();"
+                                                type="button">Очистить</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
 
 </body>
